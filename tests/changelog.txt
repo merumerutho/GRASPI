@@ -1,0 +1,25 @@
+[13/08/16]
+First test file ever.
+A prototype of Wave file recorder/player with save/open features from disk.
+Added some sounds from findsounds.com
+
+[14/08/16]
+Started shaping the real project.
+Created a player with a sawtooth (phasor) wave that plays back the file through
+the tabread4~ object. There are volume, speed, lenght and starting point
+controls. There is envelope control in two versions: graphical (not useful in
+this project) and common ADSR which isn't really working since it's intended to
+be implemented when I'll work on the Midi integration.
+
+[15-08-16]
+Re-arranged the project to keep it tidy.
+Added a granular phasor that creates stairs in the original playback sawtooth.
+Added a simple low pass and hi pass filter, not quite useful because of how
+they're placed in the signal chain, and because of the lack of resonance.
+
+[16-08-16]
+Experimenting with VCF (voltage controlled filter), which didn't give the
+results I was expecting. The controls aren't very intuitive and using a band
+pass to obtain both low pass and high pass isn't the best idea. I'll find
+another way to obtain a generic filter with low pass, hi pass and resonance
+without wasting resources.

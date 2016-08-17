@@ -1,0 +1,56 @@
+#N canvas 509 45 695 566 10;
+#X obj 42 8 adc~;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 100 float 5;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 452 144 graph;
+#X obj 137 248 tabwrite~ array1;
+#X obj 41 79 writesf~ 2;
+#X msg 111 7 open record.wav;
+#X msg 111 57 stop;
+#X msg 111 34 start;
+#X obj 42 30 *~ 5;
+#X obj 137 168 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 361 138 start;
+#X msg 361 171 stop;
+#X msg 242 153 open \$1;
+#X obj 242 129 openpanel;
+#X obj 242 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 361 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 137 194 metro 100;
+#X obj 318 299 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 365 300 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 364 247 env~;
+#X obj 317 246 env~;
+#X obj 364 267 - 100;
+#X obj 317 266 - 100;
+#X text 212 36 <- Recording Section, f 21;
+#X text 5 166 Playback Section ->;
+#X obj 242 188 readsf~;
+#X connect 0 0 7 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 7 0 3 1;
+#X connect 8 0 15 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 24 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 15 0 2 0;
+#X connect 18 0 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 17 0;
+#X connect 21 0 16 0;
+#X connect 24 0 2 0;
+#X connect 24 0 19 0;
+#X connect 24 1 18 0;
